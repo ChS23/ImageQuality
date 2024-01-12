@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: web
+    build: frontend/
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend:/app
+    networks:
+      - services-net
+    depends_on:
+      - api
+
+  api:
+    container_name: api
+    build: backend/
+    ports:
+      - "8089:8080"
+    networks:
+      - services-net
+    volumes:
+      - ./backend:/app
+
+networks:
+  services-net:
+    driver: bridge

@@ -1,0 +1,6 @@
+fastapi>=0.109.0
+uvicorn>=0.25.0
+python-multipart>=0.0.6
+piq>=0.8.0
+pillow>=10.2.0
+sewar>=0.4.6
